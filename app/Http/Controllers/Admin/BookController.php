@@ -24,9 +24,9 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|string|max:50',
-            'author' => 'required|string|max:20',
-            'publisher' => 'required|string|max:15',
+            'title' => 'required|string|max:30',
+            'author' => 'required|string|max:30',
+            'publisher' => 'required|string|max:30',
             'stock' => 'required|integer|min:0',
             'isbn' => 'required|string|max:15|unique:books,isbn',
             'year_published' => 'required|digits:4',

@@ -26,7 +26,7 @@
                         class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow ">
                         <div class="relative aspect-[3/4] bg-gray-200">
                             @if ($book->cover_image)
-                                <img src="{{ asset('storage/' . $book->cover_image) }}" alt="$book->title"
+                                <img src="{{ asset('storage/' . $book->cover_image) }}" alt="img"
                                     class="w-full h-full object-cover">
                             @else
                                 <div class="w-full h-full flex flex-col items-center justify-center text-gray-400">
@@ -55,7 +55,7 @@
                                 title="{{ $book->title }}">
                                 {{ $book->title }}
                             </h3>
-                            <p class="text-xs text-gray-500 mb-4">
+                            <p class="text-xs text-gray-500 mb-4 truncate">
                                 {{ $book->author }}
                             </p>
                             <div class="flex items-center space-x-2 border-t pt-3">
@@ -63,7 +63,7 @@
                                     class="flex-1 text-center bg-indigo-50 text-indigo-600 py-1.5 rounded-md text-xs font-semibold hover:bg-indigo-100 transition">
                                     Edit
                                 </a>
-                                {{-- <form action="{{ route('admin.books.destroy', $book->id) }}" method="POST"
+                                <form action="{{ route('admin.books.destroy', $book->id) }}" method="POST"
                                     class="flex-1" onsubmit="return confirm('Hapus buku ini?')">
                                     @csrf
                                     @method('DELETE')
@@ -71,7 +71,7 @@
                                         class="w-full text-center bg-red-50 text-red-600 py-1.5 rounded-md text-xs font-semibold hover:bg-red-100 transition">
                                         Hapus
                                     </button>
-                                </form> --}}
+                                </form>
                             </div>
                            
                         </div>

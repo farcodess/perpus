@@ -56,8 +56,9 @@
                             <div>
                                 <label for="isbn"
                                     class="block text-xs font-bold text-gray-700 uppercase tracking-widest mb-2">ISBN</label>
-                                <input type="number" name="isbn" id="isbn" value="{{ old('isbn') }}"
-                                    placeholder="Contoh: 9781234567"
+                                <input type="text" name="isbn" id="isbn" value="{{ old('isbn') }}"
+                                    placeholder="Contoh: 97812345" maxlength="8" inputmode="numeric"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                                     class="w-full border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 shadow-sm">
                             </div>
 
