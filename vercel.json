@@ -6,7 +6,7 @@
       "use": "vercel-php@0.7.3"
     },
     {
-      "src": "public/**/*",
+      "src": "public/**",
       "use": "@vercel/static"
     }
   ],
@@ -15,7 +15,8 @@
     { "src": "/(css|js|images)/(.*)", "dest": "/public/$1/$2" },
     { "src": "/favicon.ico", "dest": "/public/favicon.ico" },
     { "src": "/robots.txt", "dest": "/public/robots.txt" },
-    { "src": "/(.*)", "dest": "api/index.php" }
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/api/index.php" }
   ],
   "env": {
     "APP_ENV": "production",
